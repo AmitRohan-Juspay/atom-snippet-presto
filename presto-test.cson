@@ -1,0 +1,137 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+# Purescript
+'.source.purescript':
+  'MatchParent':
+    'prefix': 'match_parent'
+    'body': 'Match_Parent$1'
+    'description': 'Matches to Parent View'
+    'rightLabelHTML': '<span style="color:#60f">Value</span>'
+  'NewValue':
+    'prefix': 'new_value'
+    'body': '$ V ${1:0}$2'
+    'description': 'Integer value'
+    'rightLabelHTML': '<span style="color:#60f">Value</span>'
+# PROPS
+  'HeightProps':
+    'prefix': 'height'
+    'body': """
+      height ${1: $ V 0 }
+      $2
+      """
+    'description': 'Height of view'
+    'rightLabelHTML': '<span style="color:#ff0">Props</span>'
+  'WidthProps':
+    'prefix': 'width'
+    'body': """
+      width ${1: $ V 0 }
+      $2
+      """
+    'description': 'Height of view'
+    'rightLabelHTML': '<span style="color:#ff0">Props</span>'
+  'OrientationPros':
+    'prefix': 'orientation'
+    'body': """
+      orientation ${1: "vertical" }
+      $2
+      """
+    'description': 'Orientation of LinearLayout'
+    'rightLabelHTML': '<span style="color:#ff0">Props</span>'
+  'WeightProps':
+    'prefix': 'weight'
+    'body': """
+      weight ${1: "0" }
+      $2
+      """
+    'description': 'Weight of view in their parent'
+    'rightLabelHTML': '<span style="color:#ff0">Props</span>'
+
+
+# Layouts
+  'LinearLayout':
+    'prefix': 'linearLayout'
+    'body': """
+      linearLayout
+      [ height ${1:$ V 50}
+        , width ${2:$ V 50}
+        , orientation ${3:"vertical"}]
+      [$4]
+      $5
+      """
+    'description': 'Android LinearLayout for stack view'
+    'rightLabelHTML': '<span style="color:#f06">Layout</span>'
+  'RelativeLayout':
+    'prefix': 'relativeLayout'
+    'body': """
+      relativeLayout
+      [ height ${1:$ V 50}
+        , width ${2:$ V 50}]
+      [$4]
+      $5
+      """
+    'description': 'Android RelativeLayout'
+    'rightLabelHTML': '<span style="color:#f06">Layout</span>'
+  'ScrollView':
+    'prefix': 'scrollView'
+    'body': """
+      scrollView
+      [ height ${1:$ V 50}
+        , width ${2:$ V 50}]
+      [$4]
+      $5
+      """
+    'description': 'Android ScrollView for a vertical scroll'
+    'rightLabelHTML': '<span style="color:#f06">Layout</span>'
+  'HorizontalScrollView':
+    'prefix': 'horizontalScrollView'
+    'body': """
+      horizontalScrollView
+      [ height ${1:$ V 50}
+        , width ${2:$ V 50}]
+      [$4]
+      $5
+      """
+    'description': 'Android HorizontalScrollView for a Horizontal scroll'
+    'rightLabelHTML': '<span style="color:#f06">Layout</span>'
+
+# Views
+  'TextView':
+    'prefix': 'textView'
+    'body': """
+      textView
+      [ height ${1:$ V 50}
+        , width ${2:$ V 50}
+        , text ${3:"text"}]$4
+      """
+    'description': 'Android TextView'
+    'rightLabelHTML': '<span style="color:#f06">Layout</span>'
+  'ImageView':
+    'prefix': 'imageView'
+    'body': """
+      imageView
+      [ height ${1:$ V 50}
+        , width ${2:$ V 50}
+        , imageUrl ${3:"res/default_image"}]$4
+      """
+    'description': 'Android ImageView'
+    'rightLabelHTML': '<span style="color:#f06">Layout</span>'
